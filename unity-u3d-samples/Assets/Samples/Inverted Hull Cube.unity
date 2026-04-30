@@ -318,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5f517e384bdedd94ba4c3770b0d08f7e, type: 3}
       propertyPath: m_Name
-      value: inverted-hull-cube
+      value: inverted-hull-cube (default material)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5ca6394e66148784d98d7320b79179da, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f517e384bdedd94ba4c3770b0d08f7e, type: 3}
       propertyPath: m_Name
-      value: inverted-hull-cube (1)
+      value: inverted-hull-cube (unlit vertex color))
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
