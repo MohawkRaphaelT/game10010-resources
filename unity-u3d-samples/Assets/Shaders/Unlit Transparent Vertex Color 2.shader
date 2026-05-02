@@ -1,4 +1,4 @@
-Shader "Custom/TextureScroll Unlit Vertex Color"
+Shader "Custom/Unlit Vertex Color"
 {
     Properties
     {
