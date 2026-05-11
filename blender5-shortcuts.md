@@ -67,6 +67,7 @@
   * **Select**:
 
     * **Select All**: A
+    * **Select Loop**: ALT+left mouse click
     * **Select Linked**: L (while mouse over)
 
   * **Extrude**: E 
@@ -96,7 +97,8 @@
 
   * **Split**: Y (detaches vertices from neighbours)
 
-  * **Mirror Editing**: modifier
+  * **Mirror Editing**: Mirror modifier
+    * Apply can only be done in Object Mode
 
   * **Merge**: M (menu opens)
 
