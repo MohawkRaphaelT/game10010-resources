@@ -111,6 +111,7 @@
   * **Recalculate Normal**: SHIFT+N
   * **Open Normals Menu**:  ALT+N
     * **Flip**: Invert (eg. invert faces)
+    * **Backface Culling**: per material under Settings > Surface
 
 * **UV MAPPING**
 
