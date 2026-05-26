@@ -271,10 +271,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: saturn
       objectReference: {fileID: 0}
+    - target: {fileID: 6448678818323749754, guid: 603c21c143ec7f64b8ea85f90e6da5f9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 19b70e1eb1414714695f5420391c76a6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3661985432938654458, guid: 603c21c143ec7f64b8ea85f90e6da5f9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2095784380}
   m_SourcePrefab: {fileID: 100100000, guid: 603c21c143ec7f64b8ea85f90e6da5f9, type: 3}
 --- !u!1 &1411289052
 GameObject:
@@ -403,6 +410,28 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &2095784378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3661985432938654458, guid: 603c21c143ec7f64b8ea85f90e6da5f9, type: 3}
+  m_PrefabInstance: {fileID: 750145249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2095784380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095784378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900473ec14dc9fa44af45267fdcc195d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  material: {fileID: 2100000, guid: 19b70e1eb1414714695f5420391c76a6, type: 2}
+  v2Property: _MainTex_ST
+  eyeOpen: {fileID: 2800000, guid: d85eb85da4f1a6945ac1c15c719c1743, type: 3}
+  eyeClosed: {fileID: 2800000, guid: 971c27485aa30cb4896a1ce8d3b7a0aa, type: 3}
+  isEyeOpen: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
