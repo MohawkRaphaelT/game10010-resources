@@ -2,9 +2,9 @@ Shader "Custom/TextureScroll Unlit Opaque"
 {
     Properties
     {
-        [MainColor]   _BaseColor("Base Color", Color) = (1, 1, 1, 1)
-        [MainTexture] _BaseMap("Base Map", 2D)        = "white" {}
-        [Scroll]      _Scroll("Scroll UV", Vector)    = (1, 1, 0, 0)
+        [MainColor]   _BaseColor("Base Color", Color)       = (1, 1, 1, 1)
+        [MainTexture] _BaseMap("Base Map", 2D)              = "white" {}
+        [MainScroll]  _BaseScroll("Base Scroll UV", Vector) = (1, 1, 0, 0)
     }
 
     SubShader
@@ -42,7 +42,7 @@ Shader "Custom/TextureScroll Unlit Opaque"
             CBUFFER_START(UnityPerMaterial)
                 half4 _BaseColor;
                 float4 _BaseMap_ST;
-                float2 _Scroll;
+                float2 _BaseScroll;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -55,7 +55,7 @@ Shader "Custom/TextureScroll Unlit Opaque"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                float2 scroll_uv = IN.uv + _Time.y * _Scroll.xy;
+                float2 scroll_uv = IN.uv + _Time.y * _BaseScroll.xy;
                 half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, scroll_uv) * _BaseColor;
                 return color;
             }

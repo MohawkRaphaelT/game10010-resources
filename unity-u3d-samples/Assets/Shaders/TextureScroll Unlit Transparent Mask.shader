@@ -2,10 +2,11 @@ Shader "Custom/TextureScroll Unlit Transparent Mask"
 {
     Properties
     {
-        [MainColor]   _BaseColor("Base Color", Color) = (1, 1, 1, 1)
-        [MainTexture] _BaseMap("Base Map", 2D)        = "white" {}
-        [Mask]        _Mask("Mask", 2D)               = "white" {}
-        [Scroll]      _Scroll("Scroll UV", Vector)    = (1, 1, 0, 0)
+        [MainColor]   _BaseColor("Base Color", Color)       = (1, 1, 1, 1)
+        [MainTexture] _BaseMap("Base Map", 2D)              = "white" {}
+        [MainScroll]  _BaseScroll("Base Scroll UV", Vector) = (1, 1, 0, 0)
+        [Mask]        _Mask("Mask", 2D)                     = "white" {}
+        [MaskScroll]  _MaskScroll("Mask Scroll UV", Vector) = (0, 0, 0, 0)
     }
 
     SubShader
@@ -49,8 +50,9 @@ Shader "Custom/TextureScroll Unlit Transparent Mask"
             CBUFFER_START(UnityPerMaterial)
                 half4 _BaseColor;
                 float4 _BaseMap_ST;
+                float2 _BaseScroll;
                 float4 _Mask_ST;
-                float2 _Scroll;
+                float2 _MaskScroll;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -63,9 +65,13 @@ Shader "Custom/TextureScroll Unlit Transparent Mask"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                float2 scroll_uv = IN.uv + _Time.y * _Scroll.xy;
-                half4 mask  = SAMPLE_TEXTURE2D(_Mask, sampler_Mask, IN.uv);
+                // Calculate scroll offsets
+                float2 scroll_uv = IN.uv + _Time.y * _BaseScroll.xy;
+                float2 mask_scroll_uv = IN.uv + _Time.y * _MaskScroll.xy;
+                // Compute pixel in map
+                half4 mask  = SAMPLE_TEXTURE2D(_Mask, sampler_Mask, mask_scroll_uv);
                 half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, scroll_uv) * _BaseColor;
+                // Mask color before output
                 color = color * mask;
                 return color;
             }

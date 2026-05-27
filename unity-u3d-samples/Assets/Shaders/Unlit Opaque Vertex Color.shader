@@ -1,4 +1,4 @@
-Shader "Custom/Unlit Opaque Color"
+Shader "Custom/Unlit Opaque Vertex Color"
 {
     Properties
     {
@@ -6,7 +6,11 @@ Shader "Custom/Unlit Opaque Color"
 
     SubShader
     {
-        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
+        Tags
+        {
+            "RenderType" = "Opaque"
+            "RenderPipeline" = "UniversalPipeline"
+        }
 
         Pass
         {
