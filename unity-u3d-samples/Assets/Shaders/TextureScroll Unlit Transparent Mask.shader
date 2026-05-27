@@ -6,6 +6,7 @@ Shader "Custom/TextureScroll Unlit Transparent Mask"
         [MainTexture] _BaseMap("Base Map", 2D)              = "white" {}
         [MainScroll]  _BaseScroll("Base Scroll UV", Vector) = (1, 1, 0, 0)
         [Mask]        _Mask("Mask", 2D)                     = "white" {}
+        [MaskSize]    _MaskSize("Mask Size", Vector)        = (1, 1, 0, 0)
         [MaskScroll]  _MaskScroll("Mask Scroll UV", Vector) = (0, 0, 0, 0)
     }
 
@@ -52,6 +53,7 @@ Shader "Custom/TextureScroll Unlit Transparent Mask"
                 float4 _BaseMap_ST;
                 float2 _BaseScroll;
                 float4 _Mask_ST;
+                float4 _MaskSize;
                 float2 _MaskScroll;
             CBUFFER_END
 
@@ -69,7 +71,7 @@ Shader "Custom/TextureScroll Unlit Transparent Mask"
                 float2 scroll_uv = IN.uv + _Time.y * _BaseScroll.xy;
                 float2 mask_scroll_uv = IN.uv + _Time.y * _MaskScroll.xy;
                 // Compute pixel in map
-                half4 mask  = SAMPLE_TEXTURE2D(_Mask, sampler_Mask, mask_scroll_uv);
+                half4 mask  = SAMPLE_TEXTURE2D(_Mask, sampler_Mask, mask_scroll_uv / _MaskSize);
                 half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, scroll_uv) * _BaseColor;
                 // Mask color before output
                 color = color * mask;

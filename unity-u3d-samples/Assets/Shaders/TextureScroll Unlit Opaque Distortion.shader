@@ -6,6 +6,7 @@ Shader "Custom/TextureScroll Unlit Opaque Distortion"
         [MainTexture] _BaseMap("Base Map", 2D) = "white" {}
         [MainMapScroll] _BaseMapScroll ("Base Map Scroll UV", Vector) = (0, 0, 0, 0)
         [DisplacementMap] _DisplacementMap("Displacement Map", 2D) = "white" {}
+        [DisplacementSize] _DisplacementSize("Displacement Size", Vector) = (1, 1, 0, 0)
         [DisplacementStrength] _DisplacementStrength("Displacement Strength", Vector) = (0.5, 0.5, 0, 0)
         [DisplacementScroll] _DisplacementScroll ("Displacement Scroll UV", Vector) = (1, 1, 0, 0)
     }
@@ -51,6 +52,7 @@ Shader "Custom/TextureScroll Unlit Opaque Distortion"
                 float4 _BaseMap_ST;
                 float2 _BaseMapScroll;
                 float4 _DisplacementMap_ST;
+                float4 _DisplacementSize;
                 float4 _DisplacementStrength;
                 float2 _DisplacementScroll;
             CBUFFER_END
@@ -68,7 +70,7 @@ Shader "Custom/TextureScroll Unlit Opaque Distortion"
             {
                 // scroll displacement map, -0.5 to centre effect relative to midtone grey
                 float2 scroll_displace_uv = IN.uv + _Time.y * _DisplacementScroll.xy;
-                half4  displacement = SAMPLE_TEXTURE2D(_DisplacementMap, sampler_DisplacementMap, scroll_displace_uv) - 0.5;
+                half4  displacement = SAMPLE_TEXTURE2D(_DisplacementMap, sampler_DisplacementMap, scroll_displace_uv / _DisplacementSize) - 0.5;
                 displacement = displacement * _DisplacementStrength;
                 // scroll base map using displacement
                 float2 scroll_basemap_uv = (IN.uv + displacement.xy) + _Time.y * _BaseMapScroll.xy;
