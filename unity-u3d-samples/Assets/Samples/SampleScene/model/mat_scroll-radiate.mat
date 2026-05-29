@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6768209247760961297
+--- !u!114 &-2743170611248192599
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_displacement_water0339
-  m_Shader: {fileID: 4800000, guid: ece5f0397b144bb419d9fe8f68cd9259, type: 3}
+  m_Name: mat_scroll-radiate
+  m_Shader: {fileID: 4800000, guid: 0c397be38e13f4e4d9e31b0707df6092, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 562b0ea24bf67f6438f6e2f1850df456, type: 3}
+        m_Texture: {fileID: 2800000, guid: e39c7ffd616fc864db556dc688c8e0d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -55,14 +55,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Displacement:
-        m_Texture: {fileID: 2800000, guid: f3626db7d58da7045be04c9ebd28db69, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DisplacementMap:
-        m_Texture: {fileID: 2800000, guid: 562b0ea24bf67f6438f6e2f1850df456, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -115,7 +107,6 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DisplacementStrength: -0.11
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -138,15 +129,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseMapScroll: {r: 0.1, g: -0.1, b: 0, a: 0}
+    - _BaseScroll: {r: -0.33, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DisplacementScroll: {r: -0.05, g: 0.05, b: 0, a: 0}
-    - _DisplacementSize: {r: 1, g: 1, b: 0, a: 0}
-    - _DisplacementStrength: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Scroll: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _ScrollBaseMap: {r: 0, g: 0, b: 0, a: 0}
-    - _ScrollDisplace: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
