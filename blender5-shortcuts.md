@@ -128,9 +128,13 @@
 
 * **ANIMATION**
 
-  * **Keyframe Property**: K
-  * **Insert Frame**: i (after channels are watched)
-  * **Delete unused actions / animations**: File > Clean Up > Purge Unused Data
+  * **Timeline / Dope Sheet**:
+    * **Keyframe Property**:
+      * **Insert Frame**: i (add all transform channels)
+      * **Insert Keyframes**: K (add select transform channels)
+    * **Change FPS**: in right-side panel (same as Material panel, has printer icon), Output > Format > Frame Rate.
+    * **Change timeline duration**: upper-right corner "Start" and "End" fields.
+    * **Delete unused actions / animations**: File > Clean Up > Purge Unused Data
   * **Graph Editor**:
     * **Frame All**:
       * Home
